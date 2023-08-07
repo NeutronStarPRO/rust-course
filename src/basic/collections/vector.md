@@ -243,7 +243,7 @@ fn main() {
 
 当然，这个所谓的 `非稳定` 并不是指排序算法本身不稳定，而是指在排序过程中对相等元素的处理方式。在 `稳定` 排序算法里，对相等的元素，不会对其进行重新排序。而在 `不稳定` 的算法里则不保证这点。
 
-总体而言，`非稳定` 排序的算法的速度会由于 `稳定` 排序算法，同时，`稳定` 排序还会额外分配原数组一半的空间。
+总体而言，`非稳定` 排序的算法的速度会优于 `稳定` 排序算法，同时，`稳定` 排序还会额外分配原数组一半的空间。
 
 ### 整数数组的排序
 
@@ -384,7 +384,7 @@ fn main() {
 执行输出
 
 ```
-[Person { age: 1, name: "John" }, Person { age: 25, name: "John" }, Person { age: 25, name: "Zoe" }, Person { age: 30, name: "Al" }, Person { age: 60, name: "Al" }]
+[Person { name: "Al", age: 30 }, Person { name: "Al", age: 60 }, Person { name: "John", age: 1 }, Person { name: "John", age: 25 }, Person { name: "Zoe", age: 25 }]
 ```
 
 需要 `derive` `Ord` 相关特性，需要确保你的结构体中所有的属性均实现了 `Ord` 相关特性，否则会发生编译错误。`derive` 的默认实现会依据属性的顺序依次进行比较，如上述例子中，当 `Person` 的 `name` 值相同，则会使用 `age` 进行比较。
