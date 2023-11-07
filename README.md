@@ -36,13 +36,13 @@
 
 总之在写作过程中我们始终铭记初心：为中国用户打造一门**全面的、深入的、持续更新的** Rust 教程。 新手用来入门，老手用来提高，高手用来提升生产力。
 
-## 🏅 贡献者
+## 🏆 贡献者
 
 非常感谢本教程的[所有贡献者](https://github.com/sunface/rust-course/graphs/contributors)，正是有了你们，才有了现在的高质量 Rust 教程!
 
 <br />
 
-**🏆 贡献榜前三**(根据难易度、贡献次数、活跃度综合评定):
+🏆
 
 <table>
     <tr>
@@ -61,10 +61,10 @@
             </a>
         </td>
         <td align="center">
-            <a href="https://github.com/zongzi531">
-                <img src="https://avatars.githubusercontent.com/u/22429236?v=4?s=100" width="160px" alt=""/>
+            <a href="https://github.com/EluvK">
+                <img src="https://avatars.githubusercontent.com/u/36977935?v=4" width="160px" alt=""/>
                 <br />
-                <sub><b>zongzi531 🥉</b></sub>
+                <sub><b>EluvK 🥉</b></sub>
             </a>
         </td>
     </tr>
@@ -72,7 +72,7 @@
 
 <br />
 
-🏅 核心贡献者:
+🏅
 
 <table>
     <tr>
@@ -98,10 +98,10 @@
             </a>
         </td>
         <td align="center">
-            <a href="https://github.com/EluvK">
-                <img src=https://avatars.githubusercontent.com/u/36977935?v=4" width="100px" alt=""/>
+            <a href="https://github.com/zongzi531">
+                <img src="https://avatars.githubusercontent.com/u/22429236?v=4?s=100" width="100px" alt=""/>
                 <br />
-                <sub><b>Eucalypt</b></sub>
+                <sub><b>zongzi531</b></sub>
             </a>
         </td>
     </tr>

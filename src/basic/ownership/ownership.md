@@ -98,7 +98,7 @@ let s = "hello";
 }                      // 此作用域已结束，s不再有效
 ```
 
-简而言之，`s` 从创建伊始就开始有效，然后有效期持续到它离开作用域为止，可以看出，就作用域来说，Rust 语言跟其他编程语言没有区别。
+简而言之，`s` 从创建开始就有效，然后有效期持续到它离开作用域为止，可以看出，就作用域来说，Rust 语言跟其他编程语言没有区别。
 
 #### 简单介绍 String 类型
 
@@ -155,7 +155,7 @@ let s2 = s1;
 
 实际上， `String` 类型是一个复杂类型，由**存储在栈中的堆指针**、**字符串长度**、**字符串容量**共同组成，其中**堆指针**是最重要的，它指向了真实存储字符串内容的堆内存，至于长度和容量，如果你有 Go 语言的经验，这里就很好理解：容量是堆内存分配空间的大小，长度是目前已经使用的大小。
 
-总之 `String` 类型指向了一个堆上的空间，这里存储着它的真实数据, 下面对上面代码中的 `let s2 = s1` 分成两种情况讨论：
+总之 `String` 类型指向了一个堆上的空间，这里存储着它的真实数据，下面对上面代码中的 `let s2 = s1` 分成两种情况讨论：
 
 1. 拷贝 `String` 和存储在堆上的字节数组
    如果该语句是拷贝所有数据(深拷贝)，那么无论是 `String` 本身还是底层的堆上数据，都会被全部拷贝，这对于性能而言会造成非常大的影响
@@ -181,17 +181,24 @@ println!("{}, world!", s1);
 由于 Rust 禁止你使用无效的引用，你会看到以下的错误：
 
 ```console
-error[E0382]: use of moved value: `s1`
+error[E0382]: borrow of moved value: `s1`
  --> src/main.rs:5:28
   |
+2 |     let s1 = String::from("hello");
+  |         -- move occurs because `s1` has type `String`, which does not implement the `Copy` trait
 3 |     let s2 = s1;
-  |         -- value moved here
+  |              -- value moved here
 4 |
 5 |     println!("{}, world!", s1);
-  |                            ^^ value used here after move
+  |                            ^^ value borrowed here after move
   |
-  = note: move occurs because `s1` has type `std::string::String`, which does
-  not implement the `Copy` trait
+  = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider cloning the value if the performance cost is acceptable
+  |
+3 |     let s2 = s1.clone();
+  |                ++++++++
+
+For more information about this error, try `rustc --explain E0382`.
 ```
 
 现在再回头看看之前的规则，相信大家已经有了更深刻的理解：

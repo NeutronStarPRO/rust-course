@@ -7,6 +7,9 @@
 [社区和锈书](community.md)
 
 
+---
+[Datav: 可编程的数据可视化平台和可观测性平台](some-thoughts.md)
+
 
 <!-- [一本生锈的书](rusty-book.md) -->
 <!-- [Rust 语言周刊](rust-weekly.md) -->
@@ -370,3 +373,7 @@
     - [1.67](appendix/rust-versions/1.67.md)
     - [1.68](appendix/rust-versions/1.68.md)
     - [1.69](appendix/rust-versions/1.69.md)
+    - [1.70](appendix/rust-versions/1.70.md)
+    - [1.71](appendix/rust-versions/1.71.md)
+    - [1.72](appendix/rust-versions/1.72.md)
+    - [1.73](appendix/rust-versions/1.73.md)
